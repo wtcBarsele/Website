@@ -63,18 +63,19 @@ export default async function HomePage() {
       <section className="relative overflow-hidden bg-barsele-ink text-white">
         <div
           aria-hidden
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0"
           style={{
             backgroundImage:
-              'radial-gradient(circle at 20% 30%, #2f7dff 0%, transparent 45%), radial-gradient(circle at 80% 70%, #144bc4 0%, transparent 40%)',
+              'radial-gradient(ellipse at 15% 50%, #1650f0 0%, transparent 50%), radial-gradient(ellipse at 85% 20%, #2060ff44 0%, transparent 45%), radial-gradient(ellipse at 60% 90%, #1245d066 0%, transparent 40%)',
           }}
         />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30" />
         <div className="container-page relative grid gap-10 py-20 md:grid-cols-2 md:items-center md:py-28">
           <div>
             <p className="font-display text-sm uppercase tracking-[0.2em] text-barsele-blue-300">
               Wielerclub sinds 2010
             </p>
-            <h1 className="mt-3 font-display text-4xl font-semibold leading-tight sm:text-5xl md:text-6xl">
+            <h1 className="mt-3 font-display text-4xl font-extrabold leading-tight sm:text-5xl md:text-6xl">
               Samen uit,<br />
               <span className="text-barsele-blue-400">samen thuis.</span>
             </h1>
@@ -126,11 +127,16 @@ export default async function HomePage() {
                   const style = teamStyle[ride.team_code] ?? teamStyle['a'];
                   return (
                     <div key={ride.id} className={`card flex flex-col p-6 ${style.ring}`}>
-                      <span
-                        className={`inline-block self-start rounded-full px-3 py-0.5 text-xs font-semibold ${style.badge}`}
-                      >
-                        {ride.team_name}
-                      </span>
+                      <div className="flex items-center gap-2">
+                        <span className={`inline-block rounded-full px-3 py-0.5 text-xs font-semibold ${style.badge}`}>
+                          {ride.team_name}
+                        </span>
+                        {ride.barsele_challenge && (
+                          <span className="inline-block rounded-full bg-barsele-yellow px-2.5 py-0.5 text-xs font-bold text-barsele-ink">
+                            Challenge
+                          </span>
+                        )}
+                      </div>
                       <p className="mt-3 font-display text-lg font-bold text-barsele-ink leading-snug">
                         {ride.title}
                       </p>

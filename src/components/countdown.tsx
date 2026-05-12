@@ -21,7 +21,7 @@ export function Countdown({ target }: { target: string }) {
   const secs = totalSecs % 60;
 
   return (
-    <p className="mt-3 font-display text-xl font-bold tabular-nums text-barsele-ink/40">
+    <p className="mt-3 font-display text-xl font-bold tabular-nums text-barsele-red/80">
       {days > 0 && <span>{days}d </span>}
       {String(hours).padStart(2, '0')}:{String(mins).padStart(2, '0')}:{String(secs).padStart(2, '0')}
     </p>

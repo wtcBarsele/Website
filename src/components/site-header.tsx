@@ -19,7 +19,8 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-barsele-ink/5 bg-white/90 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-barsele-ink/10 bg-white/95 backdrop-blur shadow-sm">
+      <div className="h-1 w-full bg-gradient-to-r from-barsele-blue-600 via-barsele-red to-barsele-yellow" />
       <div className="container-page flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2 transition-transform duration-200 hover:scale-[1.03]">
           <Image
